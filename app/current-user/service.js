@@ -1,7 +1,4 @@
 import Ember from 'ember';
-
-export default Ember.Service.extend({
-  import Ember from 'ember';
 import DS from 'ember-data';
 
 export default Ember.Service.extend({
@@ -15,5 +12,4 @@ export default Ember.Service.extend({
       });
     }
   }),
-});
 });
