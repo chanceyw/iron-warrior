@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('game', {path: '/'}, function() {
     this.route('store');
   });
+  this.route('register');
 });
 
 export default Router;

@@ -39,10 +39,15 @@
     "ember-data": "^2.2.1",
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
+    "ember-getowner-polyfill": "1.0.0",
+    "ember-i-am": "1.0.0",
     "ember-legacy-views": "0.2.0",
     "ember-material-lite": "0.1.14",
     "ember-new-computed": "1.0.3",
     "ember-simple-auth": "1.0.1",
-    "ember-truth-helpers": "1.2.0"
+    "ember-simple-auth-registration": "1.0.1",
+    "ember-simple-form": "0.1.1",
+    "ember-truth-helpers": "1.2.0",
+    "ember-with-service": "1.1.0"
   }
 }
