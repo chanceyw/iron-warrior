@@ -1,0 +1,17 @@
+<div class="shop-container">
+ <div class="items-menu">
+
+  <ul class="shop-menu">
+    <li class="shop-menu_title">THE SHOP</li>
+    {{#each model as |shopItem|}}
+      <li>
+        <img class="ironsword" src="{{shopItem.img}}" />
+        <h4>{{shopItem.name}}</h4> <h6>{{shopItem.damage}} DMG</h6> <h6>{{shopItem.cost}} G</h6> <h6>For Class: {{shopItem.classFor}}</h6>
+        {{mdl-button isRaised=true text='Purchase'}}
+      </li>
+    {{/each}}
+  </ul>
+
+<div class="character"></div>
+</div>
+</div>
