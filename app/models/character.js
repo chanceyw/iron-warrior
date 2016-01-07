@@ -21,6 +21,7 @@ export default DS.Model.extend({
   damage: DS.attr('number', {defaultValue: 0}),
   cash: DS.attr('number', {defaultValue: 0}),
   experience: DS.attr('number', {defaultValue: 0}),
+  inventory: DS.hasMany('inventory-item'),
 
   baseAttack: Ember.computed('level', function() {
     let level = this.get('level');
@@ -56,5 +57,5 @@ export default DS.Model.extend({
 
   nextLevelXp: Ember.computed('nextLevel', function() {
     return getXpFromLevel(this.get('nextLevel'));
-  })
+  }),
 });

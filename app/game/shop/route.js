@@ -1,29 +1,24 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  shop: Ember.inject.service('game/shop'),
+  currentUser: Ember.inject.service('current-user'),
+
   model() {
-    return [
-      {
-        name: 'Iron Sword',
-        img: '/img/iron.png',
-        damage: 15,
-        cost: 200,
-        classFor: 'Warrior',
-      },
-      {
-        name: 'Diamond Sword',
-        img: '/img/diamond.png',
-        damage: 28,
-        cost: 700,
-        classFor: 'Warrior',
-      },
-      {
-        name: 'Fire Spell',
-        img: '/img/fire-icon.png',
-        damage: 28,
-        cost: 700,
-        classFor: 'Mage',
-      },
-    ];
+    return this.store.peekAll('inventory-item');
+  },
+
+  actions: {
+    buyItem: function(shopItem) {
+      this.get('shop')
+        .buyItem(shopItem);
+    },
+
+    addMoney(amount) {
+      let user = this.get('currentUser.user.content');
+
+      user.incrementProperty('cash', amount);
+      user.save();
+    },
   },
 });
