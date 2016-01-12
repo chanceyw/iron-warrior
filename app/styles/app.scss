@@ -1,42 +1,6 @@
 @import 'material-design-lite';
-
-$sprite-height: 64px;
-$sprite-steps: 6;
-
-.character {
-  content: "";
-  width: $sprite-height;
-  height: $sprite-height;
-  background: url("/img/character.png");
-  background-position-y: 0 -($sprite-height * 11);
-
-  animation: pulse steps($sprite-steps) 1s infinite;
-}
-
-@keyframes pulse {
-  to {
-        background-position-x: -0;
-  }
-
-  from {
-        background-position-x: -($sprite-height * $sprite-steps);
-  }
-}
-
-.header {
-  background-color: #4e4203;
-  width: 100%;
-  height: 10vh;
-  display: flex;
-
-  color: white;
-  font-size: 14px;
-  margin-bottom: 0;
-
-
-}
-
-//store page styles
+@import 'app/styles/header.scss';
+@import 'app/styles/characterani.scss';
 
 .shop-container {
   background: url("/img/shop.jpg") center center;
@@ -54,6 +18,7 @@ $sprite-steps: 6;
   align-items: center;
   margin-top: 0;
   border: solid #808080 1px;
+
 }
 
 .shop-menu li {
@@ -68,4 +33,28 @@ $sprite-steps: 6;
 
   border-bottom: solid #808080 2px;
   font-size: 25px;
+}
+
+// Battle page styles
+.battle-container__enemy {
+  background: url("/img/battleone.png") no-repeat center center;
+  // background: yellow;
+  width: 70%;
+  float: left;
+  height: 70vh;
+  background-size: cover;
+}
+
+.battle-container__hero {
+  background: url("/img/battleone.png") no-repeat center center;
+  width: 30%;
+  float: right;
+  height: 70vh;
+  background-size: cover;
+}
+.battle-container__footer {
+  background-color: green;
+  width: 80%;
+  margin: auto;
+  height: 10vh;
 }

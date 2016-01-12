@@ -11,14 +11,24 @@ export default Ember.Service.extend({
   },
 
   buyItem(shopItem) {
+    let sadUser = this.get('currentUser.user.content');
+
+    if (sadUser.inInventory(shopItem)) {
+      alert('You have already purchased this item');
+      return;
+    }
+
     if (!this.playerCanAfford(shopItem.get('cost'))) {
       alert('You do not have enough gold for this item');
       return;
     }
 
-    let sadUser = this.get('currentUser.user.content');
-
     sadUser.decrementProperty('cash', shopItem.get('cost'));
+
+    // add item to inventory
+
+    sadUser.get('inventory').addObject(shopItem);
+
     sadUser.save();
     return;
   },

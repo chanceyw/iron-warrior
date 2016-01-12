@@ -29,12 +29,45 @@ const inventoryItems = [
   },
 ];
 
+const monsters = [
+  {
+    id: 'training',
+    name: 'Wabbit',
+    damage: '10',
+    healthpoints: '45',
+    img: '/img/bunny.png',
+  },
+  {
+    id: 'newb',
+    name: 'Goblin',
+    damage: '45',
+    healthpoints: '100',
+    img: '/img/goblin.png',
+  },
+  {
+    id: 'gettingthere',
+    name: 'Undead',
+    damage: '100',
+    healthpoints: '200',
+    img: '/img/undead.png',
+  },
+  {
+    id: 'bosstime',
+    name: 'Gulder',
+    damage: '200',
+    healthpoints: '600',
+    img: '/img/dragon.png',
+  },
+
+  ];
+
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   currentUser: Ember.inject.service('current-user'),
 
   beforeModel() {
     this._super(...arguments);
     return this.store.pushPayload('inventory-item', {inventoryItems});
+    return this.store.pushPayload('enemies', {monsters});
   },
 
   model() {

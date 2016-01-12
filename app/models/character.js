@@ -23,6 +23,10 @@ export default DS.Model.extend({
   experience: DS.attr('number', {defaultValue: 0}),
   inventory: DS.hasMany('inventory-item'),
 
+  inInventory(inventoryItem) {
+    return this.get('inventory').contains(inventoryItem);
+  },
+
   baseAttack: Ember.computed('level', function() {
     let level = this.get('level');
 

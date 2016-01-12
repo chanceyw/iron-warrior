@@ -1,0 +1,3 @@
+{{#each model.inventory as |weapon|}}
+  <p>{{weapon.name}}</p>
+{{/each}}

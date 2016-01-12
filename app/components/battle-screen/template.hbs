@@ -1,0 +1,19 @@
+<div class="battle-container__enemy">
+  <h2>hello</h2>
+</div>
+<div class="battle-container__hero">
+  <div class="character"></div>
+  <button class="attack">ATTACK</button>
+
+  {{#each currentUser.user.inventory as |item|}}
+    <p>
+    <button class="inventory-items"{{action "select" post target="view"}}>{{item.name}}</button>
+    {{inventory.items}}
+  </p>
+  {{/each}}
+
+</div>
+<div class="battle-container__footer">
+  <h2>hmm</h2>
+
+</div>
