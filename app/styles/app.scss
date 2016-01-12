@@ -36,24 +36,70 @@
 }
 
 // Battle page styles
+.battle-container{
+  width: 100%;
+  background-size: cover;
+  background: url("/img/dark.jpg") no-repeat center center;
+  height: 80vh;
+}
+.attack-but {
+  background: #fa0000;
+  border: solid black 3px;
+  padding: 20px;
+  font-weight: bolder;
+  font-size: 30px;
+  border-radius: 10px;
+  font-family: fantasy;
+
+
+}
+.attack-but:hover {
+  background: black;
+  color: #fa0000;
+  border: solid #fa0000 3px;
+  border-radius: 0px;
+  font-size: 45px;
+}
+.battle-inventory {
+  display: flex;
+}
+.battle-inventory .inventory-item {
+  border: solid #f57d0d 2px;
+  background: #7a5604;
+  padding: 10px;
+  font-size: 15px;
+  color: black;
+}
+.battle-inventory .inventory-item:hover {
+  border: solid #7a5604 2px;
+  background: black;
+  padding: 10px;
+  font-size: 30px;
+  color: #7a5604;
+}
+.curr-weap {
+  font-size: 25px;
+  font-family: fantasy;
+}
 .battle-container__enemy {
   background: url("/img/battleone.png") no-repeat center center;
-  // background: yellow;
   width: 70%;
   float: left;
   height: 70vh;
   background-size: cover;
+  border: solid black 4px;
 }
 
 .battle-container__hero {
   background: url("/img/battleone.png") no-repeat center center;
-  width: 30%;
+  width: 25%;
   float: right;
   height: 70vh;
   background-size: cover;
+  border: solid black 4px;
 }
 .battle-container__footer {
-  background-color: green;
+
   width: 80%;
   margin: auto;
   height: 10vh;
