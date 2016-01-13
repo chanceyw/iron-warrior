@@ -1,0 +1,32 @@
+$goblin-size: 80px;
+$goblin-height: 95px;
+$goblin-steps: 4;
+
+.enemy-sprite--goblin {
+  content: '';
+  width: $goblin-size;
+  height: $goblin-height;
+  background: url("/img/goblin2.png");
+  background-position-y: 0;
+
+  animation: goblin-pulse steps($goblin-steps) 1s infinite;
+}
+
+.battle-container__enemy--goblin {
+  background: url(/img/battletwo.png) no-repeat center center;
+  background-size: cover;
+}
+.battle-container__hero--goblin {
+  background: url(/img/battletwo.png) no-repeat center center;
+  background-size: cover;
+}
+
+@keyframes goblin-pulse {
+  to {
+    background-position-x: -0;
+  }
+
+  from {
+    background-position-x: -($goblin-size * $goblin-steps);
+  }
+}

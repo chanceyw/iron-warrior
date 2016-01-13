@@ -6,7 +6,7 @@ $sprite-steps: 6;
   width: $sprite-height;
   height: $sprite-height;
   background: url("/img/character.png");
-  background-position-y: 0 -($sprite-height * 11);
+  background-position-y: 0 -($sprite-height * 5);
 
   animation: pulse steps($sprite-steps) 1s infinite;
 }

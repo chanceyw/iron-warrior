@@ -1,19 +1,28 @@
 <div class="battle-container">
-<div class="battle-container__enemy">
-  </div>
-<div class="battle-container__hero">
-  <button class="attack-but">ATTACK</button>
-
-  <div class="battle-inventory">
-  {{#each currentUser.user.inventory as |item|}}
-        <button class="inventory-item" onclick={{action "select" item}}>{{item.name}}</button>
-  {{/each}}
+  <div class="battle-container__enemy battle-container__enemy--{{enemy.className}}">
+    <div class="enemy-sprite enemy-sprite--{{enemy.className}}">
+      <div class="damage-indicator">-20HP</div>
+    </div>
   </div>
 
-  <p class="curr-weap">Current Weapon: <img src="{{currentWeapon.img}}" alt=""></p>
+  <div class="battle-container__hero">
+    <button class="attack-but">ATTACK</button>
 
-  <div class="character"></div>
-</div>
-<div class="battle-container__footer">
-</div>
+    <div class="battle-inventory">
+      {{#each currentUser.user.inventory as |item|}}
+        <button class="inventory-item" onclick= {{action "select" item}}>{{item.name}}</button>
+      {{/each}}
+    </div>
+
+    <p class="curr-weap">Current Weapon:
+      <img src="{{currentWeapon.img}}" alt="">
+    </p>
+
+    <div class="character">
+      <div class="damage-indicator">-20HP</div>
+    </div>
+  </div>
+
+  <div class="battle-container__footer">
+  </div>
 </div>

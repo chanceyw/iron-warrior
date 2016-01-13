@@ -1,0 +1,27 @@
+$wabbit-size: 48px;
+$wabbit-height: 64px;
+$wabbit-steps: 4;
+
+.enemy-sprite--wabbit {
+  content: '';
+  width: $wabbit-size;
+  height: $wabbit-height;
+  background: url("/img/bunny.png");
+  background-position-y: 0;
+  animation: wabbit-pulse steps($wabbit-steps) 1s infinite;
+}
+
+.battle-container__enemy--wabbit {
+  background: url(/img/battleone.png) no-repeat center center;
+  background-size: cover;
+}
+
+@keyframes wabbit-pulse {
+  to {
+    background-position-x: -0;
+  }
+
+  from {
+    background-position-x: -($wabbit-size * $wabbit-steps);
+  }
+}

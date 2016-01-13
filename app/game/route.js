@@ -66,8 +66,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   beforeModel() {
     this._super(...arguments);
-    return this.store.pushPayload('inventory-item', {inventoryItems});
-    return this.store.pushPayload('enemies', {monsters});
+    return Ember.RSVP.all([
+      this.store.pushPayload('inventory-item', {inventoryItems}),
+      this.store.pushPayload('enemies', {enemies: monsters}),
+    ]);
   },
 
   model() {

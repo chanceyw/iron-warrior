@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('game', {path: '/'}, function() {
     this.route('shop');
-    this.route('battle');
+    this.route('battle', {path: '/battle/:enemyName'});
   });
 
   this.route('register');
