@@ -7,17 +7,19 @@ $goblin-steps: 4;
   width: $goblin-size;
   height: $goblin-height;
   background: url("/img/goblin2.png");
-  background-position-y: 0;
+
 
   animation: goblin-pulse steps($goblin-steps) 1s infinite;
 }
-
+.cur-weap--goblin {
+	color: white;
+}
 .battle-container__enemy--goblin {
-  background: url(/img/battletwo.png) no-repeat center center;
+  background: url(/img/battlethree.png) no-repeat center center;
   background-size: cover;
 }
 .battle-container__hero--goblin {
-  background: url(/img/battletwo.png) no-repeat center center;
+  background: url(/img/battlethree.png) no-repeat center center;
   background-size: cover;
 }
 

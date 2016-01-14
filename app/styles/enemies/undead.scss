@@ -1,15 +1,18 @@
-$undead-size: 43px;
-$undead-height: 69px;
-$undead-steps: 9;
+$undead-size: 71px;
+$undead-height: 72px;
+$undead-steps: 8;
 
 .enemy-sprite--undead {
   content: '';
   width: $undead-size;
   height: $undead-height;
-  background: url("/img/Skeleton.png") no-repeat -5px -90px;;
+  background: url("/img/Skeleton.png") no-repeat 0 -85px;
 
 
   animation: undead-pulse steps($undead-steps) 2s infinite;
+}
+.cur-weap--undead {
+	color: white;
 }
 
 .battle-container__enemy--undead {

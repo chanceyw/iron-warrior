@@ -5,7 +5,7 @@
     </div>
   </div>
 
-  <div class="battle-container__hero">
+  <div class="battle-container__hero battle-container__hero--{{enemy.className}}">
     <button class="attack-but">ATTACK</button>
 
     <div class="battle-inventory">
@@ -14,7 +14,7 @@
       {{/each}}
     </div>
 
-    <p class="curr-weap">Current Weapon:
+    <p class="curr-weap cur-weap--{{enemy.className}}">Current Weapon:
       <img src="{{currentWeapon.img}}" alt="">
     </p>
 

@@ -1,0 +1,43 @@
+$gulder-size: 80px;
+$gulder-height: 118px;
+$gulder-steps: 12;
+$offset: 151px;
+
+.enemy-sprite--gulder {
+	margin: 100px;
+  content: '';
+  width: $gulder-size;
+  height: $gulder-height;
+	background-color: #ddd;
+  background: url('/img/dragon.png') no-repeat -151px 0;
+	// background-position-x: calc(-1 * #{$gulder-size} * #{$gulder-steps} - #{$offset});
+
+  animation: gulder-pulse steps($gulder-steps) 2s infinite;
+  //
+  .damage-indicator {
+		display: none;
+	}
+}
+.cur-weap--gulder {
+	color: white;
+}
+
+.battle-container__enemy--gulder {
+  background: url(/img/battlefour.png) no-repeat center center;
+
+  background-size: cover;
+}
+.battle-container__hero--gulder {
+  background: url(/img/battlefour.png) no-repeat center center;
+  background-size: cover;
+}
+
+@keyframes gulder-pulse {
+  to {
+    background-position-x: -#{-$offset};
+  }
+
+  from {
+    background-position-x: calc(-1 * #{$gulder-size} * #{$gulder-steps} - #{$offset});
+  }
+}
