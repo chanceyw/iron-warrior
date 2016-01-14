@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    apiHost: 'http://localhost:3000',
+    apiHost: 'https://iron-warrior.herokuapp.com',
     modulePrefix: 'iron-warrior',
     environment: environment,
     baseURL: '/',
