@@ -1,0 +1,31 @@
+.shop-container {
+  background: url("/img/shop.jpg") center center;
+  background-size: cover;
+  height: 100vh;
+  border-radius: 10;
+
+}
+.shop-menu {
+  width: 60%;
+  background: url("/img/parchment.jpeg") center center;
+  background-size: cover;
+  margin: auto;
+  padding: 0;
+  align-items: center;
+  margin-top: 0;
+  border: solid #808080 1px;
+
+}
+
+.shop-menu li {
+  display:flex;
+  padding: 10px;
+  flex: 1 0 calc(16.6666% - 20px);
+  border-bottom: solid #808080 1px;
+  justify-content: space-between;
+  align-items: center;
+}
+.shop-menu_title{
+  border-bottom: solid #808080 2px;
+  font-size: 25px;
+}
