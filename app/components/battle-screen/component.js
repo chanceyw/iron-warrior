@@ -4,6 +4,7 @@ export default Ember.Component.extend({
   classNames: ['battle-container'],
   enemy: null,
   currentUser: Ember.inject.service('current-user'),
+  player: Ember.computed.alias('currentUser.user.content'),
 
   // Player Stuff
   currentWeapon: null,
@@ -16,7 +17,24 @@ export default Ember.Component.extend({
       },
 
     attack: function() {
+      let player = this.get('player');
+      let enemy = this.get('enemy');
 
+      let playerAttack = player.getAttackStrength();
+      enemy.set('damage', enemy.get('damage') + playerAttack);
+
+      // Check if enemy is dead
+      if (enemy.get('currentHealthPoints') <= 0) {
+        return alert('you win');
+      }
+
+      let enemyAttack = enemy.getAttackStrength();
+      player.set('damage', player.get('damage') + enemyAttack);
+
+      // Check if player is dead
+      if (player.get('currentHealthPoints') <= 0) {
+        return alert('your dead bro');
+      }
     },
   },
 });

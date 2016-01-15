@@ -27,6 +27,10 @@ export default DS.Model.extend({
     return this.get('inventory').contains(inventoryItem);
   },
 
+  getAttackStrength(currentWeapon) {
+    return this.get('baseAttack');
+  },
+
   baseAttack: Ember.computed('level', function() {
     let level = this.get('level');
 
