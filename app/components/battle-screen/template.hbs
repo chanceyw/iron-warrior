@@ -1,7 +1,9 @@
 <div class="battle-container">
   <div class="battle-container__enemy battle-container__enemy--{{enemy.className}}">
     <div class="enemy-sprite enemy-sprite--{{enemy.className}}">
-      <div class="damage-indicator">-20HP</div>
+      {{#if enemyTakeDamage}}
+        <div class="damage-indicator">-{{enemyTakeDamage}}HP</div>
+      {{/if}}
     </div>
   </div>
 
@@ -19,7 +21,9 @@
     </p>
 
     <div class="character">
-      <div class="damage-indicator">-20HP</div>
+      {{#if playerTakeDamage}}
+        <div class="damage-indicator">-{{playerTakeDamage}}HP</div>
+      {{/if}}
     </div>
 
     <p>

@@ -1,5 +1,14 @@
 import Ember from 'ember';
 
+const {Promise} = Ember.RSVP;
+
+function wait(time) {
+  return new Promise((resolve) => {
+    console.log('waiting', time);
+    window.setTimeout(resolve, time);
+  });
+}
+
 export default Ember.Component.extend({
   classNames: ['battle-container'],
   enemy: null,
@@ -9,32 +18,55 @@ export default Ember.Component.extend({
   // Player Stuff
   currentWeapon: null,
   isPlayerTurn: true,
+  playerTakeDamage: 0,
 
   // Enemy Stuff
+  enemyTakeDamage: 0,
+
   actions: {
     select(item) {
         this.set('currentWeapon', item);
       },
 
     attack: function() {
+      this.set('isPlayerTurn', false);
       let player = this.get('player');
       let enemy = this.get('enemy');
 
-      let playerAttack = player.getAttackStrength();
-      enemy.set('damage', enemy.get('damage') + playerAttack);
+      wait(5000).then(() => {
+        // Do something to show that player is attacking
 
-      // Check if enemy is dead
-      if (enemy.get('currentHealthPoints') <= 0) {
-        return alert('you win');
-      }
+        return wait(5000);
+      }).then(() => {
+        // Stop animating player attack
 
-      let enemyAttack = enemy.getAttackStrength();
-      player.set('damage', player.get('damage') + enemyAttack);
+        // Enemy Take Damage - Data
+        let playerAttack = player.getAttackStrength();
+        enemy.set('damage', enemy.get('damage') + playerAttack);
 
-      // Check if player is dead
-      if (player.get('currentHealthPoints') <= 0) {
-        return alert('your dead bro');
-      }
+        // Enemy Show Damage
+        this.set('enemyTakeDamage', playerAttack);
+
+        // Check if enemy is dead
+        if (enemy.get('currentHealthPoints') <= 0) {
+          return alert('you win');
+        }
+
+        return wait(5000);
+      }).then(() => {
+        // Shop showing enemy damage indicator
+        this.set('enemyTakeDamage', 0);
+
+        let enemyAttack = enemy.getAttackStrength();
+        player.set('damage', player.get('damage') + enemyAttack);
+
+        return wait(5000);
+      }).then(() => {
+        // Check if player is dead
+        if (player.get('currentHealthPoints') <= 0) {
+          return alert('your dead bro');
+        }
+      });
     },
   },
 });
