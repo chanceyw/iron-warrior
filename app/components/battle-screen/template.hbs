@@ -6,7 +6,7 @@
   </div>
 
   <div class="battle-container__hero battle-container__hero--{{enemy.className}}">
-    <button class="attack-but">ATTACK</button>
+    <button class="attack-but" disabled={{not isPlayerTurn}} onclick={{action "attack"}}>ATTACK</button>
 
     <div class="battle-inventory">
       {{#each currentUser.user.inventory as |item|}}
@@ -21,8 +21,10 @@
     <div class="character">
       <div class="damage-indicator">-20HP</div>
     </div>
+
+    <p>
+      {{currentUser.user.currentHealthPoints}}/{{currentUser.user.maxHealthPoints}}
+    </p>
   </div>
 
-  <div class="battle-container__footer">
-  </div>
 </div>

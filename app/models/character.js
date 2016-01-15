@@ -35,6 +35,7 @@ export default DS.Model.extend({
 
   maxHealthPoints: Ember.computed('level', function() {
     let level = this.get('level');
+    console.log(level * healthMultiplier + startingHealth);
 
     return level * healthMultiplier + startingHealth;
   }),
