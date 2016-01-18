@@ -28,6 +28,10 @@ export default DS.Model.extend({
   },
 
   getAttackStrength(currentWeapon) {
+    if (currentWeapon) {
+      return this.get('baseAttack') + currentWeapon.get('damage');
+    }
+
     return this.get('baseAttack');
   },
 

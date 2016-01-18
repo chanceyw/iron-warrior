@@ -7,9 +7,9 @@ $goblin-steps: 4;
   width: $goblin-size;
   height: $goblin-height;
   background: url("/img/goblin2.png");
+  background-position-y: 0 -($sprite-height-top * 3);
 
-
-  animation: goblin-pulse steps($goblin-steps) 1s infinite;
+  animation: goblin-pulse steps($goblin-steps) 1.5s infinite;
 }
 .cur-weap--goblin {
 	color: white;

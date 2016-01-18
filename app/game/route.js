@@ -7,7 +7,7 @@ const inventoryItems = [
     id: 1,
     name: 'Iron Sword',
     img: '/img/iron.png',
-    damage: 15,
+    damage: 10,
     cost: 200,
     classFor: 'Warrior',
   },
@@ -15,18 +15,18 @@ const inventoryItems = [
     id: 2,
     name: 'Diamond Sword',
     img: '/img/diamond.png',
-    damage: 28,
+    damage: 50,
     cost: 700,
-    classFor: 'Warrior',
+
+
   },
   {
     id: 3,
-    name: 'Fire Spell',
+    name: 'Fire Sword',
     img: '/img/fire-icon.png',
-    damage: 28,
-    cost: 700,
-    classFor: 'Mage',
-  },
+    damage: 100,
+    cost: 2000,
+    },
 ];
 
 const monsters = [
@@ -36,6 +36,8 @@ const monsters = [
     baseAttack: '10',
     maxHealthPoints: '45',
     img: '/img/bunny.png',
+    cashGiven: 15,
+    experienceGiven: 6,
   },
   {
     id: 'newb',
@@ -43,20 +45,26 @@ const monsters = [
     baseAttack: '45',
     maxHealthPoints: '100',
     img: '/img/goblin.png',
+    cashGiven: 25,
+    experienceGiven: 25,
   },
   {
     id: 'gettingthere',
     name: 'Undead',
     baseAttack: '100',
-    maxHealthPoints: '200',
+    maxHealthPoints: '500',
     img: '/img/undead.png',
+    cashGiven: 75,
+    experienceGiven: 42,
   },
   {
     id: 'bosstime',
     name: 'Gulder',
     baseAttack: '200',
-    healthpoints: '600',
+    healthpoints: '2300',
     img: '/img/dragon.png',
+    cashGiven: 1000,
+    experienceGiven: 75,
   },
 
   ];

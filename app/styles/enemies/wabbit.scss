@@ -1,12 +1,18 @@
+$wabbit-sheet-width: 192px;
+$wabbit-sheet-height: 256px;
+$wabbit-scale: 2;
+
+
 $wabbit-size: 48px;
 $wabbit-height: 64px;
 $wabbit-steps: 4;
 
 .enemy-sprite--wabbit {
   content: '';
-  width: $wabbit-size;
-  height: $wabbit-height;
+  width: $wabbit-size * $wabbit-scale;
+  height: $wabbit-height * $wabbit-scale;
   background: url("/img/bunny.png");
+  background-size: $wabbit-sheet-width * $wabbit-scale $wabbit-sheet-height * $wabbit-scale;
   background-position-y: 0;
   animation: wabbit-pulse steps($wabbit-steps) 1s infinite;
 }
@@ -22,6 +28,6 @@ $wabbit-steps: 4;
   }
 
   from {
-    background-position-x: -($wabbit-size * $wabbit-steps);
+    background-position-x: -($wabbit-size * $wabbit-steps * $wabbit-scale);
   }
 }

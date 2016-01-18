@@ -20,15 +20,15 @@
       <img src="{{currentWeapon.img}}" alt="">
     </p>
 
-    <div class="character">
+    <div class="character-ani__victory {{playerAnimation}}">
       {{#if playerTakeDamage}}
         <div class="damage-indicator">-{{playerTakeDamage}}HP</div>
       {{/if}}
     </div>
 
-    <p>
+    <h4 class="player-hp">
       {{currentUser.user.currentHealthPoints}}/{{currentUser.user.maxHealthPoints}}
-    </p>
+    </h4>
   </div>
 
 </div>

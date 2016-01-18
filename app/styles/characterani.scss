@@ -1,14 +1,22 @@
-$sprite-height: 64px;
-$sprite-steps: 6;
+$sprite-height-top: 64px;
+$sprite-steps-top: 6;
+$sprite-height-attack: 64px;
+$sprite-steps-attack: 6;
+$sprite-width-attack: 195px;
 
-.character {
+.player-hp {
+  font-family: fantasy;
+  color: white;
+}
+
+.character-ani__victory {
   content: "";
-  width: $sprite-height;
-  height: $sprite-height;
+  width: $sprite-height-top;
+  height: $sprite-height-top;
   background: url("/img/character.png");
-  background-position-y: 0 -($sprite-height * 5);
+  background-position-y: 0 -($sprite-height-top * 5);
 
-  animation: pulse steps($sprite-steps) 1s infinite;
+  animation: pulse steps($sprite-steps-top) 1s infinite;
 }
 
 @keyframes pulse {
@@ -17,6 +25,26 @@ $sprite-steps: 6;
   }
 
   from {
-        background-position-x: -($sprite-height * $sprite-steps);
+        background-position-x: -($sprite-height-top * $sprite-steps-top);
+  }
+}
+
+.character-ani-attack {
+  content: "";
+  width: $sprite-height-attack;
+  height: $sprite-height-top;
+  background: url("/img/character.png");
+  background-position-y: 0 -($sprite-height-top * 25);
+
+  animation: pulse steps($sprite-steps-attack) 1s infinite;
+}
+
+@keyframes pulse {
+  to {
+        background-position-x: -0;
+  }
+
+  from {
+        background-position-x: -($sprite-height-top * $sprite-steps-top);
   }
 }

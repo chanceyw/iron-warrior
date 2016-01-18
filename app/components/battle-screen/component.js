@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
-const {Promise} = Ember.RSVP;
+const {Promise, resove, reject} = Ember.RSVP;
 
 function wait(time) {
   return new Promise((resolve) => {
-    console.log('waiting', time);
+    // console.log('waiting', time);
     window.setTimeout(resolve, time);
   });
 }
@@ -14,6 +14,7 @@ export default Ember.Component.extend({
   enemy: null,
   currentUser: Ember.inject.service('current-user'),
   player: Ember.computed.alias('currentUser.user.content'),
+  playerAnimation: null,
 
   // Player Stuff
   currentWeapon: null,
@@ -33,39 +34,64 @@ export default Ember.Component.extend({
       let player = this.get('player');
       let enemy = this.get('enemy');
 
-      wait(5000).then(() => {
+      wait(1000).then(() => {
+        this.set('playerAnimation', 'character--attack');
+
         // Do something to show that player is attacking
 
-        return wait(5000);
+        return wait(1000);
       }).then(() => {
         // Stop animating player attack
+        this.set('playerAnimation', null);
 
         // Enemy Take Damage - Data
-        let playerAttack = player.getAttackStrength();
+        let playerAttack = player.getAttackStrength(this.get('currentWeapon'));
         enemy.set('damage', enemy.get('damage') + playerAttack);
 
         // Enemy Show Damage
         this.set('enemyTakeDamage', playerAttack);
 
         // Check if enemy is dead
+
         if (enemy.get('currentHealthPoints') <= 0) {
-          return alert('you win');
+
+          // find rewards (cash and xp)
+          // add rewards to the player
+          // save the player
+          let playerCash = player.get('cash');
+          let playerXp = player.get('experience');
+          let cashGiven = enemy.get('cashGiven');
+          let experienceGiven = enemy.get('experienceGiven');
+          player.set('cash', cashGiven + playerCash);
+          player.set('experience', experienceGiven + playerXp);
+          alert('you win');
+
+          this.sendAction('onwin', player);
+
+          return reject();
         }
 
-        return wait(5000);
+        return wait(1000);
       }).then(() => {
+        console.log('after win');
+
         // Shop showing enemy damage indicator
         this.set('enemyTakeDamage', 0);
 
         let enemyAttack = enemy.getAttackStrength();
         player.set('damage', player.get('damage') + enemyAttack);
 
-        return wait(5000);
+        return wait(1000);
       }).then(() => {
         // Check if player is dead
         if (player.get('currentHealthPoints') <= 0) {
-          return alert('your dead bro');
+          // Make the player pay for their huberis
+          alert('your dead bro');
+          this.sendAction('ondeath', player);
+          return reject();
         }
+
+        this.set('isPlayerTurn', true);
       });
     },
   },

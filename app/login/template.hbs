@@ -1,6 +1,14 @@
-{{#simple-form onsubmit="loginUser" as |formValues|}}
-  {{input value=formValues.email name="username" placeholder="Username"}}
-  {{input value=formValues.password name="password" type="password" placeholder="Password"}}
-
-  <button class="login-submit-btn">Submit</button>
+<div class="register-user__container">
+{{#simple-form onsubmit="loginUser" class="register-user__window" as |formValues|}}
+    <h3>The Iron Warrior</h3>
+    <h5>Please Log In</h5>
+    {{mdl-textfield value=formValues.email label="Email"}}
+    {{mdl-textfield type="password" value=formValues.password label="Password"}}
+<button class="register-user__button">
+  <img class="index-map__training-img index-map__item" src="img/submit-button.png" alt="" />
+  </button>
+  {{#link-to 'register' class="reg" }}
+  <h4>Register Here</h4>
+  {{/link-to}}
 {{/simple-form}}
+</div>
