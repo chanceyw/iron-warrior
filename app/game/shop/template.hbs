@@ -8,7 +8,6 @@
           <img class="ironsword" src="{{shopItem.img}}" />
           <h4>{{shopItem.name}}</h4> <h6>{{shopItem.damage}} DMG</h6> <h6>{{shopItem.cost}} G</h6>
           {{mdl-button action=(route-action 'buyItem' shopItem) isRaised=true text='Purchase'}}
-          {{mdl-button action=(route-action 'addMoney' 2000) isRaised=true text='Add Money'}}
         </li>
       {{/each}}
     </ul>
