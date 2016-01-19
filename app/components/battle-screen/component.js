@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-const {Promise, resove, reject} = Ember.RSVP;
+const {Promise, reject} = Ember.RSVP;
 
 function wait(time) {
   return new Promise((resolve) => {
@@ -66,7 +66,7 @@ export default Ember.Component.extend({
           player.set('experience', experienceGiven + playerXp);
           alert('you win');
 
-          this.sendAction('onwin', player);
+          this.sendAction('onwin', player, enemy);
 
           return reject();
         }
@@ -87,7 +87,7 @@ export default Ember.Component.extend({
         if (player.get('currentHealthPoints') <= 0) {
           // Make the player pay for their huberis
           alert('your dead bro');
-          this.sendAction('ondeath', player);
+          this.sendAction('ondeath', player, enemy);
           return reject();
         }
 

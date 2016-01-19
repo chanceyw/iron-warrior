@@ -6,17 +6,19 @@ export default Ember.Route.extend({
   },
 
   actions: {
-    saveAndWin(player) {
+    saveAndWin(player, enemy) {
       player.set('damage', 0);
+      enemy.set('damage', 0);
       player.save().then(() => {
-        this.transitionTo('');
+        this.transitionTo('game');
       });
     },
 
-    saveAndDie(player) {
+    saveAndDie(player, enemy) {
       player.set('damage', 0);
+      enemy.set('damage', 0);
       player.save().then(() => {
-        this.transitionTo('');
+        this.transitionTo('game');
       });
     },
   },

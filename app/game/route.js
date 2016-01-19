@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
-let { RSVP } = Ember;
+let {RSVP} = Ember;
 
 const inventoryItems = [
   {
@@ -17,8 +17,6 @@ const inventoryItems = [
     img: '/img/diamond.png',
     damage: 50,
     cost: 700,
-
-
   },
   {
     id: 3,
@@ -26,7 +24,7 @@ const inventoryItems = [
     img: '/img/fire-icon.png',
     damage: 100,
     cost: 2000,
-    },
+  },
 ];
 
 const monsters = [
