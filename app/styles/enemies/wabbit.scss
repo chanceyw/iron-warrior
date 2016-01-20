@@ -1,6 +1,6 @@
 $wabbit-sheet-width: 192px;
 $wabbit-sheet-height: 256px;
-$wabbit-scale: 2;
+$wabbit-scale: 1.4;
 
 
 $wabbit-size: 48px;
@@ -15,6 +15,9 @@ $wabbit-steps: 4;
   background-size: $wabbit-sheet-width * $wabbit-scale $wabbit-sheet-height * $wabbit-scale;
   background-position-y: 0;
   animation: wabbit-pulse steps($wabbit-steps) 1s infinite;
+  position: relative;
+  top: 180px;
+  left: 50%;
 }
 
 .battle-container__enemy--wabbit {

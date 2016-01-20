@@ -13,8 +13,11 @@
   font-size: 30px;
   border-radius: 10px;
 
+
   &:disabled {
     background: orange;
+    color: grey;
+
   }
 }
 .attack-but:hover {
@@ -23,6 +26,11 @@
   border: solid #fa0000 3px;
   border-radius: 0;
   font-size: 45px;
+
+  &:disabled {
+    background: orange;
+    color: grey;
+  }
 }
 .battle-inventory {
   display: flex;
