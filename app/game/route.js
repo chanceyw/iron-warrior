@@ -15,7 +15,7 @@ const inventoryItems = [
     id: 2,
     name: 'Diamond Sword',
     img: '/img/diamond.png',
-    damage: 50,
+    damage: 300,
     cost: 700,
   },
   {
@@ -43,8 +43,8 @@ const monsters = [
     baseAttack: '45',
     maxHealthPoints: '100',
     img: '/img/goblin.png',
-    cashGiven: 25,
-    experienceGiven: 25,
+    cashGiven: 100,
+    experienceGiven: 80,
   },
   {
     id: 'gettingthere',

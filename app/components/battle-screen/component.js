@@ -35,7 +35,7 @@ export default Ember.Component.extend({
       let enemy = this.get('enemy');
 
       wait(1000).then(() => {
-        this.set('playerAnimation', 'character--attack');
+        this.set('playerAnimation', 'character-ani--attack');
 
         // Do something to show that player is attacking
 

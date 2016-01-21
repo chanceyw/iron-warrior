@@ -5,6 +5,15 @@
         <div class="damage-indicator">-{{enemyTakeDamage}}HP</div>
       {{/if}}
     </div>
+
+    <div class="character {{playerAnimation}}">
+      {{#if playerTakeDamage}}
+        <div class="damage-indicator">-{{playerTakeDamage}}HP</div>
+      {{/if}}
+      <h4 class="player-hp">
+        HP:  {{currentUser.user.currentHealthPoints}}/{{currentUser.user.maxHealthPoints}}
+      </h4>
+    </div>
   </div>
 
   <div class="battle-container__hero battle-container__hero--{{enemy.className}}">
@@ -19,16 +28,6 @@
     <p class="curr-weap cur-weap--{{enemy.className}}">Current Weapon:
       <img src="{{currentWeapon.img}}" alt="">
     </p>
-
-    <div class="character .character-ani--attack {{playerAnimation}}">
-      {{#if playerTakeDamage}}
-        <div class="damage-indicator">-{{playerTakeDamage}}HP</div>
-      {{/if}}
-    </div>
-
-    <h4 class="player-hp">
-    HP:  {{currentUser.user.currentHealthPoints}}/{{currentUser.user.maxHealthPoints}}
-    </h4>
   </div>
 
 </div>

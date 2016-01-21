@@ -7,7 +7,10 @@ $undead-steps: 8;
   width: $undead-size;
   height: $undead-height;
   background: url("/img/Skeleton.png") no-repeat 0 -85px;
-
+  position: relative;
+  top: 164px;
+  left: 50%;
+  transform: scale(2.2);
 
   animation: undead-pulse steps($undead-steps) 2s infinite;
 }

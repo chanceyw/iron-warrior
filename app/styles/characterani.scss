@@ -1,8 +1,8 @@
 $sprite-height-top: 64px;
 $sprite-steps-top: 6;
-$sprite-height-attack: 64px;
-$sprite-steps-attack: 6;
-$sprite-width-attack: 195px;
+$sprite-height-attack: 104px;
+$sprite-steps-attack: 5;
+$sprite-width-attack: 190px;
 
 .player-hp {
   font-family: fantasy;
@@ -10,7 +10,7 @@ $sprite-width-attack: 195px;
 }
 .player-hp {
   position: relative;
-  right: 73%;
+  right: -15%;
   top: 80px;
 }
 .character {
@@ -20,7 +20,7 @@ $sprite-width-attack: 195px;
   background: url("/img/character.png");
   background-position-y: 0 -($sprite-height-top * 9);
   position: relative;
-  right: 69%;
+  right: -65%;
   top: 90px;
 
 
@@ -44,20 +44,21 @@ $sprite-width-attack: 195px;
 
 .character-ani--attack {
   content: "";
-  width: $sprite-height-attack;
+  width: $sprite-width-attack;
   height: $sprite-height-attack;
-  background: url("/img/character.png");
-  background-position-y: 0 -($sprite-height-top * 25);
+
+  background-position-y: calc(-#{$sprite-height-top} * 20 - #{$sprite-height-attack} * 3);
+  animation: none;
 
   animation: attack-pulse steps($sprite-steps-attack) 1s infinite;
 }
 
 @keyframes attack-pulse {
   to {
-        background-position-x: -0;
+    background-position-x: -0;
   }
 
   from {
-        background-position-x: -($sprite-height-attack * $sprite-steps-attack);
+    background-position-x: -($sprite-width-attack * $sprite-steps-attack);
   }
 }

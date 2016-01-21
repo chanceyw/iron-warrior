@@ -11,7 +11,9 @@ $offset: 151px;
 	background-color: #ddd;
   background: url('/img/dragon.png') no-repeat -151px 0;
 	// background-position-x: calc(-1 * #{$gulder-size} * #{$gulder-steps} - #{$offset});
-
+	position: relative;
+  top: 180px;
+  left: 50%;
   animation: gulder-pulse steps($gulder-steps) 2s infinite;
   //
   .damage-indicator {
